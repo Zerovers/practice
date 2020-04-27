@@ -1,6 +1,4 @@
 import React, { FC } from 'react'
-import { DndProvider } from 'react-dnd'
-import Backend from 'react-dnd-html5-backend'
 import styled from 'styled-components'
 import Element from '../components/Element'
 
@@ -17,10 +15,8 @@ const Wrapper = styled.div`
 const index: FC = () => {
   return (
     <Wrapper>
-      <DndProvider backend={Backend}>
-        <Element />
-        <Element second />
-      </DndProvider>
+      <Element />
+      <Element second />
     </Wrapper>
   )
 }

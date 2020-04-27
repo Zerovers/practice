@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { createGlobalStyle } from 'styled-components'
+import { DndProvider } from 'react-dnd'
+import Backend from 'react-dnd-html5-backend'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -9,7 +11,10 @@ const GlobalStyle = createGlobalStyle`
   }
   html: {
     height: 100%;
-  } 
+  }
+  img {
+    width: 100%;
+  }
 `
 
 interface MyAppProps {
@@ -27,7 +32,9 @@ const MyApp = ({ Component, pageProps }: MyAppProps): JSX.Element => {
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <DndProvider backend={Backend}>
+        <Component {...pageProps} />
+      </DndProvider>
     </>
   )
 }

@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 import { useDrag } from 'react-dnd'
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ second: boolean; isDragging: boolean }>`
   display: flex;
   width: 49%;
   height: 300px;
